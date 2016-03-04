@@ -1,0 +1,13 @@
+{
+  "region": "eu-west-1",
+  "dryrun": true,
+  "filters": [],
+  "rules": {
+    "*": {
+      "minSnapshots": 1,
+      "maxSnapshots": 50,
+      "minAgeInDays": 7,
+      "maxAgeInDays": 28
+    }
+  }
+}
