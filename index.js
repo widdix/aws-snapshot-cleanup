@@ -125,6 +125,8 @@ function cleanupSnapshotGroup(ec2, dryrun, minSnapshots, maxSnapshots, minAgeInD
             setTimeout(function() {
               loop();
             }, 5000);
+          } else if (err.code === "InvalidSnapshot.NotFound") { // already deleted
+            cb();
           } else {
             cb(err);
           }
