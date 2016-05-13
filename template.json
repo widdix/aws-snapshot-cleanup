@@ -100,7 +100,8 @@
         "EvaluationPeriods": "1",
         "Threshold": "1",
         "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-        "AlarmActions": [{"Ref": "AlarmTopicParameter"}]
+        "AlarmActions": [{"Ref": "AlarmTopicParameter"}],
+        "OKActions": [{"Ref": "AlarmTopicParameter"}]
       }
     },
     "LambdaThrottlesAlarm": {
@@ -118,7 +119,8 @@
         "EvaluationPeriods": "1",
         "Threshold": "1",
         "ComparisonOperator": "GreaterThanOrEqualToThreshold",
-        "AlarmActions": [{"Ref": "AlarmTopicParameter"}]
+        "AlarmActions": [{"Ref": "AlarmTopicParameter"}],
+        "OKActions": [{"Ref": "AlarmTopicParameter"}]
       }
     }
   }
