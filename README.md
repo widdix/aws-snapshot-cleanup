@@ -29,8 +29,6 @@ Upload `lambda.zip` file to S3.
 
 Create CloudFormation stack based on template `template.json`.
 
-TODO CloudFormation does not yet support adding schedulers to lambda functions. So you need to add this manually.
-
 ## Configuration
 
 ### DryRun

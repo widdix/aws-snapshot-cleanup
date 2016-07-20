@@ -190,7 +190,7 @@ function cleanup(ec2, dryrun, filters, rules, cb) {
   });
 }
 
-exports.handler = function(event, context) {
+exports.handler = function(event, context, cb) {
   "use strict";
   console.log("handler()", event); 
   var ec2 = new AWS.EC2({
@@ -205,9 +205,9 @@ exports.handler = function(event, context) {
   }
   cleanup(ec2, dryrun, event.filters || globalConfig.filters || [], event.rules || globalConfig.rules, function(err, reports) {
     if (err) {
-      context.fail(err);
+      cb(err);
     } else {
-      context.succeed(reports);
+      cb(null, reports);
     }
   });
 };

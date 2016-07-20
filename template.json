@@ -69,6 +69,26 @@
         }]
       }
     },
+    "Cron": {
+      "Type": "AWS::Events::Rule",
+      "Properties": {
+        "ScheduleExpression": "rate(1 hour)",
+        "State": "ENABLED",
+        "Targets": [{
+          "Arn": {"Fn::GetAtt": ["Lambda", "Arn"]},
+          "Id": "Lambda"
+        }]
+      }
+    },
+    "CronLambdaPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:invokeFunction",
+        "FunctionName": {"Fn::GetAtt": ["Lambda", "Arn"]},
+        "SourceArn": {"Fn::GetAtt": ["Cron", "Arn"]},
+        "Principal": "events.amazonaws.com"
+      }
+    },
     "Lambda": {
       "Type" : "AWS::Lambda::Function",
       "Properties": {
@@ -81,7 +101,7 @@
         "Handler": "index.handler",
         "MemorySize": 128,
         "Role": {"Fn::GetAtt": ["LambdaRole", "Arn"]},
-        "Runtime": "nodejs",
+        "Runtime": "nodejs4.3",
         "Timeout": 60
       }
     },
