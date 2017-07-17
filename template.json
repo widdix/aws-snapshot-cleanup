@@ -16,7 +16,7 @@
       "Description": "Leave blank if you don't have versioning enabled on LambdaS3Bucket"
     },
     "AlarmTopicParameter": {
-      "Description": "SNS topic to send CloudWatch alarms",
+      "Description": "ARN of SNS topic to send CloudWatch alarms",
       "Type": "String"
     }
   },
