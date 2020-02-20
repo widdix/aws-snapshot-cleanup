@@ -9,7 +9,7 @@
     "jshint": "2.9.1",
     "madge": "0.5.3",
     "npmedge": "0.2.2",
-    "moment": "2.11.2",
+    "moment": "2.24.0",
     "istanbul": "0.4.2"
   },
   "bundledDependencies": ["neo-async", "underscore"]
